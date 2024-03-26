@@ -2,7 +2,7 @@
 
 
     <q-card class="q-pa-xs" >
-      <q-btn size="16px" icon="map" label="Button Label" color="primary" @click="hander" class="" >
+      <q-btn size="16px" icon="map" label="Button Label" color="primary" @click="hander" class="">
       </q-btn>
     </q-card>
     <q-table :rows="rows" :columns="columns" title="表格" class="" >
@@ -10,7 +10,7 @@
   
 <q-card class="" >
 
-<q-input label="qwe" :model-value="qwe" filled="" class=""></q-input></q-card></div>
+<q-input label="qwe" :model-value="qwe" filled="" class="" ></q-input></q-card></div>
 
 </template><script setup lang="ts">
 import {ref} from "vue"
