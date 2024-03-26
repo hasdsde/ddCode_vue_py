@@ -23,21 +23,22 @@
           </div>
         </template>
         <template v-slot:default-body="prop">
-
-          <!--     可选     -->
-          <q-select v-if="prop.node.option" :options="prop.node.option" dense filled
-                    v-model="prop.node.value" new-value-mode="add" use-input
-                    @update:model-value="handleInputConfig(prop.node.value,prop.node)"
-          />
-          <!--     bool     -->
-          <q-select v-else-if="prop.node.type=='boolean'" :options="['true','false']" dense filled
-                    v-model="prop.node.value"
-                    @update:model-value="handleInputConfig(prop.node.value,prop.node)"
-          />
-          <!--     字符串     -->
-          <q-input v-else-if="prop.node.type" type="textarea" autogrow dense filled
-                   v-model="prop.node.value"
-                   @update:model-value="handleInputConfig(prop.node.value,prop.node)"/>
+          <div v-if="!prop.node.children">
+            <!--     可选     -->
+            <q-select v-if="prop.node.option" :options="prop.node.option" dense filled
+                      v-model="prop.node.value" new-value-mode="add" use-input
+                      @update:model-value="handleInputConfig(prop.node.value,prop.node)"
+            />
+            <!--     bool     -->
+            <q-select v-else-if="prop.node.type=='boolean'" :options="['true','false']" dense filled
+                      v-model="prop.node.value"
+                      @update:model-value="handleInputConfig(prop.node.value,prop.node)"
+            />
+            <!--     字符串     -->
+            <q-input v-else="prop.node.type" type="textarea" autogrow dense filled
+                     v-model="prop.node.value"
+                     @update:model-value="handleInputConfig(prop.node.value,prop.node)"/>
+          </div>
         </template>
       </q-tree>
     </q-card>
@@ -58,7 +59,23 @@
             filled
             autogrow
             type="textarea"
-            class="overflow-auto h-[1000px] text-red"
+            class="overflow-auto  text-red"
+        />
+      </q-card-section>
+      <q-card-section>
+        <div class="text-body1 q-pb-md flex justify-between items-center">
+          <span class="text-md">
+            全部代码
+          </span>
+        </div>
+        <!--    不知道为什么option直接用有错误    -->
+        <q-input
+            v-model="allCode"
+            debounce="1000"
+            filled
+            autogrow
+            type="textarea"
+            class="overflow-auto text-red"
         />
       </q-card-section>
     </q-card>
@@ -75,6 +92,7 @@ let option = ref({})//echarts使用
 let codeView = ref("")//代码预览
 let configTree: any = ref(configList)//所有配置
 let propsList: { label: string, value: string }[] = []//解析获得的参数
+let allCode = ref("")
 option.value = {
   title: {
     text: 'ECharts 入门示例'
@@ -87,25 +105,28 @@ option.value = {
     data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
   },
   yAxis: {},
-  series: [
-    {
-      name: '销量',
-      type: 'bar',
-      data: [5, 20, 36, 10, 10, 20]
-    }
-  ]
+  series:
+      {
+        name: '销量',
+        type: 'bar',
+        data: [5, 20, 36, 10, 10, 20]
+      }
+
 }
 
 onMounted(() => {
   loadProps()
   loadChart1()
   codeView.value = JSON.stringify(option.value)
+  genAllCode()
 })
 
 watch(codeView, () => {
   option.value = JSON.parse(codeView.value)
+  genAllCode()
   loadChart1()
 })
+
 
 // json解析到tree
 function loadProps() {
@@ -127,6 +148,7 @@ function handleInputConfig(value: any, node: any) {
   loadChart1()
   //更新源码
   codeView.value = JSON.stringify(option.value)
+  genAllCode()
 }
 
 //递归获取值
@@ -230,4 +252,35 @@ function loadChart1() {
   };
 }
 
+//生成全部代码
+function genAllCode() {
+  let code = `<template>
+  <div>
+    <q-card class="w-[38%] h-full flex justify-center q-pa-md ">
+      <div ref="chart1" style="width: 100%;height:400px;"></div>
+    </q-card>
+  </div>
+</template>
+<script setup lang="ts">
+import * as echarts from 'echarts';
+import {onMounted, ref} from "vue";
+
+let chart1 = ref()`
+  let code2 = `\nlet option = ref(${codeView.value})\n`
+  let code3 = `
+onMounted(() => {
+  loadChart1()
+})
+
+function loadChart1() {
+  let myChart = echarts.init(chart1.value);
+  myChart.setOption(option.value);
+  window.onresize = function () {
+    myChart.resize()
+  };
+}
+<\/script>
+`
+  allCode.value = code + code2 + code3
+}
 </script>
