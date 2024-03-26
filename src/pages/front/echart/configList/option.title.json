@@ -1,356 +1,378 @@
 [
-    {
-        "label": "title.id",
-        "desc": "组件 ID"
-    },
-    {
-        "label": "title.show",
-        "desc": "是否显示标题组件",
-        "type": "boolean",
-        "default": "true"
-    },
-    {
-        "label": "title.text",
-        "desc": "主标题文本，支持使用 <code class=\"codespan\">\\n</code> 换行",
-        "type": "text"
-    },
-    {
-        "label": "title.link",
-        "desc": "主标题文本超链接"
-    },
-    {
-        "label": "title.target",
-        "desc": "指定窗口打开主标题超链接"
-    },
-    {
+  {
+    "label": "title.id",
+    "desc": "组件 ID"
+  },
+  {
+    "label": "title.show",
+    "desc": "是否显示标题组件",
+    "type": "boolean",
+    "default": "true"
+  },
+  {
+    "label": "title.text",
+    "desc": "主标题文本，支持使用 <code class=\"codespan\">\\n</code> 换行",
+    "type": "text"
+  },
+  {
+    "label": "title.link",
+    "desc": "主标题文本超链接"
+  },
+  {
+    "label": "title.target",
+    "desc": "指定窗口打开主标题超链接"
+  },
+  {
+    "label": "title.textStyle",
+    "desc": "主标题文字",
+    "children": [
+      {
         "label": "title.textStyle.color",
         "desc": "主标题文字的颜色",
         "type": "color",
         "default": "'#333'"
-    },
-    {
+      },
+      {
         "label": "title.textStyle.fontStyle",
         "desc": "主标题文字字体的风格",
-        "type": [
-            "normal",
-            "italic",
-            "oblique"
-        ],
-        "default": "normal"
-    },
-    {
+        "type": "enum",
+        "default": "normal",
+        "options": [
+          "normal",
+          "italic",
+          "oblique"
+        ]
+      },
+      {
         "label": "title.textStyle.fontWeight",
         "desc": "主标题文字字体的粗细",
-        "type": [
-            "normal",
-            "bold",
-            "bolder",
-            "lighter"
-        ],
-        "default": "normal"
-    },
-    {
+        "type": "enum",
+        "default": "normal",
+        "options": [
+          "normal",
+          "bold",
+          "bolder",
+          "lighter"
+        ]
+      },
+      {
         "label": "title.textStyle.fontFamily",
         "desc": "主标题文字的字体系列",
-        "type": [
-            "sans-serif",
-            "serif",
-            "monospace",
-            "Arial",
-            "Courier New"
-        ],
-        "default": "sans-serif"
-    },
-    {
+        "type": "enum",
+        "default": "sans-serif",
+        "options": [
+          "sans-serif",
+          "serif",
+          "monospace",
+          "Arial",
+          "Courier New"
+        ]
+      },
+      {
         "label": "title.textStyle.fontSize",
         "desc": "主标题文字的字体大小",
         "type": "number",
         "default": "18"
-    },
-    {
+      },
+      {
         "label": "title.textStyle.lineHeight",
         "desc": "行高",
         "type": "number",
         "default": "12"
-    },
-    {
+      },
+      {
         "label": "title.textStyle.width",
         "desc": "文字块的宽度"
-    },
-    {
+      },
+      {
         "label": "title.textStyle.height",
         "desc": "文字块的高度"
-    },
-    {
+      },
+      {
         "label": "title.textStyle.textBorderColor",
         "desc": "文字本身的描边颜色",
         "type": "color"
-    },
-    {
+      },
+      {
         "label": "title.textStyle.textBorderWidth",
         "desc": "文字本身的描边宽度",
         "type": "number"
-    },
-    {
+      },
+      {
         "label": "title.textStyle.textShadowColor",
         "desc": "文字本身的阴影颜色",
         "type": "color",
         "default": "#000"
-    },
-    {
+      },
+      {
         "label": "title.textStyle.textShadowBlur",
         "desc": "文字本身的阴影长度",
         "type": "number"
-    },
-    {
+      },
+      {
         "label": "title.textStyle.textShadowOffsetX",
         "desc": "文字本身的阴影 X 偏移",
         "type": "number"
-    },
-    {
+      },
+      {
         "label": "title.textStyle.textShadowOffsetY",
         "desc": "文字本身的阴影 Y 偏移",
         "type": "number"
-    },
-    {
+      },
+      {
         "label": "title.textStyle.rich",
         "desc": "在 <code class=\"codespan\">rich</code> 里面，可以自定义富文本样式"
-    },
-    {
-        "label": "title.subtext",
-        "desc": "副标题文本，支持使用 <code class=\"codespan\">\\n</code> 换行",
-        "type": "text"
-    },
-    {
-        "label": "title.sublink",
-        "desc": "副标题文本超链接"
-    },
-    {
-        "label": "title.subtarget"
-    },
-    {
+      }
+    ]
+  },
+  {
+    "label": "title.subtext",
+    "desc": "副标题文本，支持使用 <code class=\"codespan\">\\n</code> 换行",
+    "type": "text"
+  },
+  {
+    "label": "title.sublink",
+    "desc": "副标题文本超链接"
+  },
+  {
+    "label": "title.subtarget"
+  },
+  {
+    "label": "title.subtextStyle",
+    "desc": "副标题文字",
+    "children": [
+      {
         "label": "title.subtextStyle.color",
         "desc": "副标题文字的颜色",
         "type": "color",
         "default": "'#aaa'"
-    },
-    {
+      },
+      {
         "label": "title.subtextStyle.fontStyle",
         "desc": "副标题文字字体的风格",
-        "type": [
-            "normal",
-            "italic",
-            "oblique"
-        ],
-        "default": "normal"
-    },
-    {
+        "type": "enum",
+        "default": "normal",
+        "options": [
+          "normal",
+          "italic",
+          "oblique"
+        ]
+      },
+      {
         "label": "title.subtextStyle.fontWeight",
         "desc": "副标题文字字体的粗细",
-        "type": [
-            "normal",
-            "bold",
-            "bolder",
-            "lighter"
-        ],
-        "default": "normal"
-    },
-    {
+        "type": "enum",
+        "default": "normal",
+        "options": [
+          "normal",
+          "bold",
+          "bolder",
+          "lighter"
+        ]
+      },
+      {
         "label": "title.subtextStyle.fontFamily",
         "desc": "副标题文字的字体系列",
-        "type": [
-            "sans-serif",
-            "serif",
-            "monospace",
-            "Arial",
-            "Courier New"
-        ],
-        "default": "sans-serif"
-    },
-    {
+        "type": "enum",
+        "default": "sans-serif",
+        "options": [
+          "sans-serif",
+          "serif",
+          "monospace",
+          "Arial",
+          "Courier New"
+        ]
+      },
+      {
         "label": "title.subtextStyle.fontSize",
         "desc": "副标题文字的字体大小",
         "type": "number",
         "default": "12"
-    },
-    {
+      },
+      {
         "label": "title.subtextStyle.align",
         "desc": "文字水平对齐方式，默认自动",
-        "type": [
-            "left",
-            "center",
-            "right"
+        "type": "enum",
+        "options": [
+          "left",
+          "center",
+          "right"
         ]
-    },
-    {
+      },
+      {
         "label": "title.subtextStyle.verticalAlign",
         "desc": "文字垂直对齐方式，默认自动",
-        "type": [
-            "top",
-            "middle",
-            "bottom"
+        "type": "enum",
+        "options": [
+          "top",
+          "middle",
+          "bottom"
         ]
-    },
-    {
+      },
+      {
         "label": "title.subtextStyle.lineHeight",
         "desc": "行高",
         "type": "number",
         "default": "12"
-    },
-    {
+      },
+      {
         "label": "title.subtextStyle.width",
         "desc": "文字块的宽度"
-    },
-    {
+      },
+      {
         "label": "title.subtextStyle.height",
         "desc": "文字块的高度"
-    },
-    {
+      },
+      {
         "label": "title.subtextStyle.textBorderColor",
         "desc": "文字本身的描边颜色",
         "type": "color"
-    },
-    {
+      },
+      {
         "label": "title.subtextStyle.textBorderWidth",
         "desc": "文字本身的描边宽度",
         "type": "number"
-    },
-    {
+      },
+      {
         "label": "title.subtextStyle.textShadowColor",
         "desc": "文字本身的阴影颜色",
         "type": "color",
         "default": "#000"
-    },
-    {
+      },
+      {
         "label": "title.subtextStyle.textShadowBlur",
         "desc": "文字本身的阴影长度",
         "type": "number"
-    },
-    {
+      },
+      {
         "label": "title.subtextStyle.textShadowOffsetX",
         "desc": "文字本身的阴影 X 偏移",
         "type": "number"
-    },
-    {
+      },
+      {
         "label": "title.subtextStyle.textShadowOffsetY",
         "desc": "文字本身的阴影 Y 偏移",
         "type": "number"
-    },
-    {
+      },
+      {
         "label": "title.subtextStyle.rich",
         "desc": "在 <code class=\"codespan\">rich</code> 里面，可以自定义富文本样式"
-    },
-    {
-        "label": "title.textAlign",
-        "desc": "整体（包括 text 和 subtext）的水平对齐",
-        "type": [
-            "auto",
-            "left",
-            "center",
-            "right"
-        ],
-        "default": "auto"
-    },
-    {
-        "label": "title.textVerticalAlign",
-        "desc": "整体（包括 text 和 subtext）的垂直对齐",
-        "type": [
-            "auto",
-            "top",
-            "middle",
-            "bottom"
-        ],
-        "default": "auto"
-    },
-    {
-        "label": "title.triggerEvent",
-        "desc": "是否触发事件"
-    },
-    {
-        "label": "title.padding",
-        "desc": "标题内边距，单位px，默认各方向内边距为5，接受数组分别设定上右下左边距",
-        "type": "vector"
-    },
-    {
-        "label": "title.itemGap",
-        "desc": "主副标题之间的间距",
-        "type": "number",
-        "default": "10"
-    },
-    {
-        "label": "title.zlevel",
-        "desc": "所有图形的 zlevel 值"
-    },
-    {
-        "label": "title.z",
-        "desc": "组件的所有图形的<code class=\"codespan\">z</code>值"
-    },
-    {
-        "label": "title.left",
-        "desc": "title 组件离容器左侧的距离",
-        "type": "percent",
-        "default": "0%"
-    },
-    {
-        "label": "title.top",
-        "desc": "title 组件离容器上侧的距离",
-        "type": "percent",
-        "default": "0%"
-    },
-    {
-        "label": "title.right",
-        "desc": "title 组件离容器右侧的距离",
-        "type": "percent",
-        "default": "0%"
-    },
-    {
-        "label": "title.bottom",
-        "desc": "title 组件离容器下侧的距离",
-        "type": "percent",
-        "default": "0%"
-    },
-    {
-        "label": "title.backgroundColor",
-        "desc": "标题背景色，默认透明",
-        "type": "color"
-    },
-    {
-        "label": "title.borderColor",
-        "desc": "标题的边框颜色",
-        "type": "color",
-        "default": "#ccc"
-    },
-    {
-        "label": "title.borderWidth",
-        "desc": "标题的边框线宽",
-        "type": "number",
-        "default": "0"
-    },
-    {
-        "label": "title.borderRadius",
-        "desc": "圆角半径，单位px，支持传入数组分别指定 4 个圆角半径",
-        "type": "vector"
-    },
-    {
-        "label": "title.shadowBlur",
-        "desc": "图形阴影的模糊大小",
-        "type": "number"
-    },
-    {
-        "label": "title.shadowColor",
-        "desc": "阴影颜色",
-        "type": "color"
-    },
-    {
-        "label": "title.shadowOffsetX",
-        "desc": "阴影水平方向上的偏移距离",
-        "type": "number",
-        "default": "0"
-    },
-    {
-        "label": "title.shadowOffsetY",
-        "desc": "阴影垂直方向上的偏移距离",
-        "type": "number",
-        "default": "0"
-    }
+      }
+    ]
+  },
+  {
+    "label": "title.textAlign",
+    "desc": "整体（包括 text 和 subtext）的水平对齐",
+    "type": "enum",
+    "default": "auto",
+    "options": [
+      "auto",
+      "left",
+      "center",
+      "right"
+    ]
+  },
+  {
+    "label": "title.textVerticalAlign",
+    "desc": "整体（包括 text 和 subtext）的垂直对齐",
+    "type": "enum",
+    "default": "auto",
+    "options": [
+      "auto",
+      "top",
+      "middle",
+      "bottom"
+    ]
+  },
+  {
+    "label": "title.triggerEvent",
+    "desc": "是否触发事件"
+  },
+  {
+    "label": "title.padding",
+    "desc": "标题内边距，单位px，默认各方向内边距为5，接受数组分别设定上右下左边距",
+    "type": "vector"
+  },
+  {
+    "label": "title.itemGap",
+    "desc": "主副标题之间的间距",
+    "type": "number",
+    "default": "10"
+  },
+  {
+    "label": "title.zlevel",
+    "desc": "所有图形的 zlevel 值"
+  },
+  {
+    "label": "title.z",
+    "desc": "组件的所有图形的<code class=\"codespan\">z</code>值"
+  },
+  {
+    "label": "title.left",
+    "desc": "title 组件离容器左侧的距离",
+    "type": "percent",
+    "default": "0%"
+  },
+  {
+    "label": "title.top",
+    "desc": "title 组件离容器上侧的距离",
+    "type": "percent",
+    "default": "0%"
+  },
+  {
+    "label": "title.right",
+    "desc": "title 组件离容器右侧的距离",
+    "type": "percent",
+    "default": "0%"
+  },
+  {
+    "label": "title.bottom",
+    "desc": "title 组件离容器下侧的距离",
+    "type": "percent",
+    "default": "0%"
+  },
+  {
+    "label": "title.backgroundColor",
+    "desc": "标题背景色，默认透明",
+    "type": "color"
+  },
+  {
+    "label": "title.borderColor",
+    "desc": "标题的边框颜色",
+    "type": "color",
+    "default": "#ccc"
+  },
+  {
+    "label": "title.borderWidth",
+    "desc": "标题的边框线宽",
+    "type": "number",
+    "default": "0"
+  },
+  {
+    "label": "title.borderRadius",
+    "desc": "圆角半径，单位px，支持传入数组分别指定 4 个圆角半径",
+    "type": "vector"
+  },
+  {
+    "label": "title.shadowBlur",
+    "desc": "图形阴影的模糊大小",
+    "type": "number"
+  },
+  {
+    "label": "title.shadowColor",
+    "desc": "阴影颜色",
+    "type": "color"
+  },
+  {
+    "label": "title.shadowOffsetX",
+    "desc": "阴影水平方向上的偏移距离",
+    "type": "number",
+    "default": "0"
+  },
+  {
+    "label": "title.shadowOffsetY",
+    "desc": "阴影垂直方向上的偏移距离",
+    "type": "number",
+    "default": "0"
+  }
 ]
